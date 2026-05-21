@@ -130,6 +130,7 @@ The script automatically produces four critical diagnostic plots:
 
 
 Summary Findings
+
 The analysis successfully developed and refined a Ridge Regression model to predict used car prices, achieving consistent incremental improvements through feature engineering and data cleaning.
 
 Key Insights
