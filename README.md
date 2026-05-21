@@ -1,8 +1,8 @@
-Vehicle Price Prediction & Analysis Pipeline
+**Vehicle Price Prediction & Analysis Pipeline**
 
 This repository contains a comprehensive Python data pipeline that cleans vehicle listings data, conducts exploratory correlation analysis, handles multivariate anomalies, and optimizes a polynomial regression model to predict vehicle prices.
 
-🛠️ Features
+🛠️ **Features**
 
 - Automated Data Cleaning: Handles missing values via smart structural drops, median imputation, and categorical placeholder fills.
 
@@ -13,16 +13,16 @@ This repository contains a comprehensive Python data pipeline that cleans vehicl
 - Model Optimization: Evaluates high-degree polynomial pipelines using 5-fold Cross-Validation to eliminate overfitting trends.
 
 
-📦 Required Dependencies
+📦 **Required Dependencies**
 
 Ensure you have the following Python libraries installed before running the execution script:
 
 	bashpip install numpy pandas matplotlib seaborn scikit-learn
 
 
-🚀 Execution Workflow
+🚀 **Execution Workflow**
 
-1. Data Ingestion & Missing Value Matrix
+1. **Data Ingestion & Missing Value Matrix**
 
 - Loads the structural data source file from data/vehicles.csv.
 
@@ -31,7 +31,7 @@ Ensure you have the following Python libraries installed before running the exec
 - Calculates and visualizes null-value percentages across all columns.
 
 
-2. Feature Transformations
+2. **Feature Transformations**
 
 - Calculates vehicle_age relative to the current calendar year.
 
@@ -40,7 +40,7 @@ Ensure you have the following Python libraries installed before running the exec
 - Fills remaining empty data fields using structural medians and 'Unknown' flags.
 
 
-3. Exploratory Heatmap Matrix
+3. **Exploratory Heatmap Matrix**
 
 - Generates a Pearson correlation coefficient matrix.
 
@@ -51,7 +51,7 @@ Ensure you have the following Python libraries installed before running the exec
 ![Alt Text](images/correlation_heatmap.png)
 
 
-4. IQR Outlier Filtration
+4. **IQR Outlier Filtration**
 
 - Scans feature distribution spaces across price, odometer, and vehicle_age.
 - Drops out-of-bounds records to optimize model stability.
@@ -61,7 +61,7 @@ Ensure you have the following Python libraries installed before running the exec
 ![Alt Text](images/outliers.png)
 
 
-5. Cross-Validation & Polynomial Tuning
+5. **Cross-Validation & Polynomial Tuning**
 
 - Splits the historical log dataset into an 80/20 train/test matrix.
 
@@ -76,7 +76,7 @@ Ensure you have the following Python libraries installed before running the exec
 ![Alt Text](images/polynomial_cross_validation.png)
 
 
-6. Regularization & Hyperparameter Search
+6. **Regularization & Hyperparameter Search**
 
 - Loops through L2 regularization strengths (alphas = [0.001, 0.1, 1.0, 10.0, 100.0]) via a Ridge estimator.
 
@@ -87,7 +87,7 @@ Ensure you have the following Python libraries installed before running the exec
 ![Alt Text](images/ridge_regression_alpha_cross_validation.png)
 
 
-7. Incremental Feature Expansion
+7. **Incremental Feature Expansion**
 
 The pipeline scales model performance up by sequentially encoding and testing new feature combinations in a machine learning Pipeline:
 
@@ -116,7 +116,7 @@ The pipeline scales model performance up by sequentially encoding and testing ne
 
 
 
-📊 Evaluation Visualizations
+📊 **Evaluation Visualizations**
 
 The script automatically produces four critical diagnostic plots:
 
@@ -129,11 +129,11 @@ The script automatically produces four critical diagnostic plots:
 4.  **Actual vs. Predicted Scatter Plot**: Draws a diagonal identity line ('y = x') against final predictions to display accuracy spreads.
 
 
-Summary Findings
+**Summary Findings**
 
 The analysis successfully developed and refined a Ridge Regression model to predict used car prices, achieving consistent incremental improvements through feature engineering and data cleaning.
 
-Key Insights
+**Key Insights**
 
 **Primary Predictors**: Mileage (odometer) and vehicle_age possess the strongest correlations to car price, serving as the foundation for the baseline model.
 
@@ -146,7 +146,7 @@ Key Insights
 **Hyperparameter Stability**: Across all iterations—both before and after introducing categorical features—Cross-Validation consistently identified 10.0 as the optimal alpha value for the Ridge model.
 
 
-🏢 Suggestions for Car Dealers
+🏢 **Suggestions for Car Dealers**
 
 **Prioritize Age and Mileage in Appraisals**: Train sales and acquisition teams to focus heavily on vehicle_age and odometer. Because these two factors dictate the vast majority of a vehicle's market value, secondary traits like color or minor cosmetic features should not heavily alter baseline trade-in offers.
 
@@ -157,7 +157,7 @@ Key Insights
 **Expect a Margin of Variance**: Recognize that standard predictive algorithms carry an average error margin of roughly $10,685. Rely on localized human expertise to fine-tune the final retail price, rather than trusting automated pricing software blindly.
 
 
-💻 How to Run
+💻 **How to Run**
 
 1. Create a root directory named 'data' and store your dataset inside it as 'vehicles.csv'.
 
